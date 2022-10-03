@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --size: 40px;
+    --borderSize: 3px;
+    --primaryColor: #467fd0;
+    --secondaryColor: #ccc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.progress {
+    display: flex;
+}
+
+.circle {
+    width: var(--size);
+    height: var(--size);
+    line-height: var(--size);
+    text-align: center;
+    border: var(--borderSize) solid var(--secondaryColor);
+    border-radius: 50%;
+    transition: border-color .3s linear;
+}
+
+.circle.active {
+    border-color: var(--primaryColor);
+}
+
+.bar {
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    translate: 0 -50%;
+    height: var(--borderSize);
+    width: calc(var(--size) * 2);
+    background-color: var(--secondaryColor);
+
+}
+
+.bar::before {
+    transition: .3s linear;
+    display: block;
+    content: "";
+    position: relative;
+    left: -100%;
+    height: var(--borderSize);
+    width: calc(var(--size) * 2);
+    background-color: var(--primaryColor);
+}
+
+.bar.active::before {
+    left: 0;
+}
+
+button {
+    color: white;
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    border: none;
+    /* padding: 10px; */
+    width: calc(var(--size) * 2);
+    padding: 10px;
+    border-radius: 7px;
+    margin: 20px 10px;
+}
+
+button:active {
+    scale: 0.98;
+}
+
+button:disabled {
+    background-color: var(--secondaryColor);
+    cursor: not-allowed;
+    scale: 1;
+}
+
+button:hover:not([disabled]) {
+    background-color: #2f69bc;
+}
