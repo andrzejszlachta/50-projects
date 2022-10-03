@@ -8,11 +8,61 @@
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100vh;
     overflow: hidden;
-    margin: 0;
+    margin: 0 30px;
     padding: 0;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    /* background-size: cover; */
+    background-position: center;
+    margin: 0 10px;
+    border-radius: 50px;
+    flex: 0.5;
+    height: 80vh;
+    transition: flex .3s linear;
+}
+
+.photos p {
+    opacity: 0;
+    color: white;
+    margin-left: 30px;
+    transition: opacity .5s ease-in;
+}
+
+.photos.active p {
+    opacity: 1;
+}
+
+.active {
+    flex: 5;
+}
+
+.photo1 {
+    background-image: url("img/photo1.jpg");
+
+}
+
+.photo2 {
+    background-image: url("img/photo2.jpg");
+}
+
+.photo3 {
+    background-image: url("img/photo3.jpg");
+}
+
+.photo4 {
+    background-image: url("img/photo4.jpg");
+}
+
+.photo5 {
+    background-image: url("img/photo5.jpg");
 }
