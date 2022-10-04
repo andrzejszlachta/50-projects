@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(71, 71, 71);
+    /* max-width: 1280px; */
+}
+
+.hamburger-wrapper {
+    /* transform: rotate(0deg); */
+}
+
+.hamburger {
+    z-index: 99;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: fixed;
+    top: -75px;
+    left: -75px;
+    transform-origin: center;
+    transform: rotate(0deg);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(219, 87, 87);
+    transition: transform .2s linear;
+}
+
+.hamburger.rotate {
+    transform: rotate(-90deg);
+}
+
+.hamburger i {
+    position: relative;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    cursor: pointer;
+
+}
+
+.fa-bars {
+    top: -20%;
+    left: -20%;
+}
+
+.fa-xmark {
+    top: -20%;
+    left: 20%;
+    margin-right: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    transform: rotate(0);
+    background-color: #ccc;
+    margin: 0 200px;
+    padding: 100px 15%;
+    height: 100vh;
+}
+
+article {
+    max-width: 80vw;
+}
+
+.wrapper.rotate {
+    transform: rotate(-20deg);
+}
+
+article h2 {
+    margin-bottom: 0;
+}
+
+article .author {
+    margin-top: 0;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+nav {
+    position: absolute;
+}
