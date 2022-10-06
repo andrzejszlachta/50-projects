@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+}
+
+.container .image {
+    background-image: url(./photo.jpg);
+    min-width: 100vw;
+    min-height: 100vh;
+    background-position: center;
+    filter: blur(20px);
+    transition: filter 3s linear;
+}
+
+.container .image.unblur {
+    filter: blur(0);
+}
+
+.container .percent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: antiquewhite;
+    opacity: 1;
+    transition: opacity 3s linear;
+}
+
+.container .percent.unblur {
+    opacity: 0;
+}
