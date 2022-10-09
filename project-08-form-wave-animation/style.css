@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: rgb(57, 110, 209);
+    --secondaryColor: rgb(47, 77, 133);
+    --altColor: rgb(149, 189, 207);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primaryColor);
+}
+
+.login-window {
+    border-radius: 5px;
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: var(--secondaryColor);
+}
+
+.login-window h2 {
+    margin: 0 0 30px;
+    text-align: center;
+    color: white;
+}
+
+.login-window label {
+    color: white;
+    position: relative;
+    top: 50px;
+}
+
+.login-window label.active {
+    color: var(--altColor);
+}
+
+.login-window label span {
+    position: relative;
+    top: 0;
+    transition: top .1s cubic-bezier(.11, .9, .8, 1.75);
+}
+
+.login-window label.active span {
+    display: inline-block;
+    top: -25px;
+}
+
+.login-window input {
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    margin: 20px 0 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.login-window input.active {
+    border-color: var(--altColor);
+}
+
+.login-window input:focus {
+    outline: none;
+}
+
+.login-window button {
+    margin: 50px 0 10px;
+    cursor: pointer;
+    width: 100%;
+    padding: 7px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--altColor);
+    transition: background-color .1s linear;
+}
+
+.login-window button:hover {
+    background-color: var(--primaryColor);
+}
+
+.login-window p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.login-window a {
+    color: var(--altColor);
+    text-decoration: none;
+}
+
+.login-window a:hover {
+    text-decoration: underline;
+}
