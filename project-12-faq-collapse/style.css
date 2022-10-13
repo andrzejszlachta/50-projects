@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+}
+
+.cards-container .card {
+    cursor: pointer;
+    position: relative;
+    padding: 30px 80px 30px 20px;
+    margin: 10px;
+    border: 1px solid #111;
+    border-radius: 10px;
+}
+
+.cards-container .card.expanded {
+    cursor: auto;
+    background-color: white;
+    box-shadow: 1px 3px 2px 2px #ccc;
+}
+
+.cards-container .card .switch {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: rotate(90deg) translateX(-100%);
+}
+
+.cards-container .card.expanded .switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    top: 20px;
+    background-color: #aaa;
+    color: white;
+    width: 25px;
+    height: 25px;
+    transform: rotate(0) translateX(35%);
+    border-radius: 50%;
+}
+
+.cards-container .card.expanded::before {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    content: "\f075";
+    font-family: 'Font Awesome 5 Free';
+    font-size: 5rem;
+    opacity: .2;
+    color: green;
+}
+
+.cards-container .card.expanded::after {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    content: "\f075";
+    font-family: 'Font Awesome 5 Free';
+    font-size: 5rem;
+    opacity: .2;
+    color: rgb(96, 96, 194);
+    transform: rotateY(180deg);
+}
+
+.cards-container .card.expanded .switch:hover {
+    background-color: black;
+}
+
+
+.cards-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cards-container .card h3 {
+    font-weight: 400;
+    margin: auto 0;
+}
+
+.cards-container .card p {
+    font-size: 0.9rem;
+    display: none;
+}
+
+.cards-container .card.expanded p {
+    margin: 30px 0 0;
+    display: block;
+}
