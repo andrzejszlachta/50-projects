@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --animationTime: .6s;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    position: relative;
+}
+
+.backgroundTop {
+    background-color: lightskyblue;
+    width: 100vw;
+    height: 50vh;
+}
+
+.backgroundBottom {
+    background-color: dodgerblue;
+    width: 100vw;
+    height: 50vh;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 350px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    transition: width var(--animationTime) linear;
+    box-shadow: 0 0 5px 1px #ccc;
+}
+
+nav.collapsed {
+    width: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    height: 40px;
+    line-height: 100%;
+    opacity: 1;
+    transition: opacity var(--animationTime) linear;
+}
+
+nav.collapsed ul li {
+    opacity: 0;
+}
+
+nav ul a {
+    display: block;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    width: 40px;
+    height: 40px;
+}
+
+.switch i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(45deg);
+    cursor: pointer;
+    display: block;
+    color: black;
+    color: cornflowerblue;
+}
+
+.switch i:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+nav .switch i {
+    transition: transform var(--animationTime) linear;
+}
+
+nav.collapsed .switch i {
+    transform: translate(-288px, calc(-50% - 4px)) rotate(720deg);
+}
+
+nav.collapsed .switch i:nth-child(2) {
+    transform: translate(-288px, calc(-50% + 4px)) rotate(-720deg);
+}
