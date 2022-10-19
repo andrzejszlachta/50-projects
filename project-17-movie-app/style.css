@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Raleway&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 :root {
-    --primaryColor: #7678ed;
-    --secondaryColor: #3d348b;
+    --primaryColor: #373b69;
+    --secondaryColor: #22254b;
 }
 
 body {
@@ -27,20 +27,23 @@ nav input {
     background-color: transparent;
     padding: 5px 10px;
     border: 1px solid black;
-    color: black;
+    color: white;
 }
 
 nav input:focus {
     outline: 3px solid black;
+    background-color: var(--secondaryColor);
 }
 
 .movies {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 30px;
     background-color: var(--secondaryColor);
     padding: 20px;
+    min-height: calc(100vh - 68px);
 }
 
 .movie {
@@ -67,7 +70,9 @@ nav input:focus {
 
 .movie .title {
     padding: 15px 30px 15px 20px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
 }
 
 .movie .rating {
@@ -84,11 +89,21 @@ nav input:focus {
     bottom: 0;
     transform: translateY(100%);
     background-color: white;
-    padding: 10px;
-    transition: transform .5s ease-out;
+    padding: 15px;
+    transition: transform .3s ease-out;
     max-height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
 }
 
 .movie:hover .overview {
     transform: translateY(0);
+}
+
+.no-results {
+    position: absolute;
+    top: 30%;
+    color: white;
+    font-size: 3rem;
+    line-height: 100%;
 }
