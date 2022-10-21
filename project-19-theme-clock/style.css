@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* dark mode */
+:root {
+    --size: 100px;
+    --primaryColor: #000;
+    --secondaryColor: #fff;
+    --bgColor: #fff;
+}
+
+html .clock-wrapper.darkMode {
+    --primaryColor: #fff;
+    --secondaryColor: #000;
+    --bgColor: #111;
+}
+
+/* body */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* clock container */
+.clock-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color .3s linear;
+    background-color: var(--bgColor);
+}
+
+/* button switch color mode */
+.clock-wrapper button#mode-switch {
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10% 0;
+}
+
+/* clock */
+.clock-wrapper .clock {
+    position: relative;
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
+    margin-bottom: 20px;
+}
+
+.clock-wrapper .clock .arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom center;
+    background-color: var(--primaryColor);
+    width: 3px;
+    border-radius: 2px;
+}
+
+.clock-wrapper .clock .arrow-minute {
+    height: var(--size);
+    transform: translateX(-50%);
+}
+
+.clock-wrapper .clock .arrow-hour {
+    top: calc(var(--size) * 0.3);
+    height: calc(var(--size) * 0.7);
+    transform: translateX(-50%);
+}
+
+.clock-wrapper .clock .arrow-second {
+    height: var(--size);
+    transform: translateX(-50%);
+    background-color: red;
+}
+
+.clock-wrapper .clock .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid red;
+    background-color: var(--primaryColor);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* date */
+.clock-wrapper .date-container {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primaryColor);
+}
+
+.clock-wrapper .date-container .time {
+    font-size: 3rem;
+    margin: 15px;
+}
+
+.clock-wrapper .date-container .date {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.clock-wrapper .date-container .date .day {
+    display: inline-block;
+    color: var(--secondaryColor);
+    background-color: var(--primaryColor);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
