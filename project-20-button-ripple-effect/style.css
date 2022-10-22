@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+.wrapper button#ripple {
+    position: relative;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+#ripple:focus {
+    outline: none;
+}
+
+#ripple .circle {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale .5s ease-out;
+}
+
+@keyframes scale {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
