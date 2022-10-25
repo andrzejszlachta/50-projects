@@ -1,0 +1,52 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: royalblue;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader::after,
+.loader::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    border: 50px solid transparent;
+    transform-origin: center center;
+}
+
+.loader::before {
+    border-left: 50px solid white;
+    animation: rotate 2s .5s normal infinite;
+}
+
+.loader::after {
+    border-top: 50px solid white;
+    animation: rotate 2s normal infinite;
+}
+
+@keyframes rotate {
+
+    0%,
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
