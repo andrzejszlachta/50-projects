@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(136, 136, 136, 1) 0%, rgba(221, 221, 221, 1) 100%);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+}
+
+.card {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 20px 3px #aaa;
+}
+
+.card .card-image {
+    height: 50%;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    background: var(--background);
+}
+
+
+.card .card-description {
+    height: 50%;
+    padding: 20px 30px;
+    background-color: white;
+}
+
+.card .card-description h2 {
+    font-size: 1.5rem;
+    min-height: 1.5rem;
+    margin: 0;
+    background: var(--background);
+}
+
+.card .card-description p {
+    background: var(--background);
+    min-height: 1rem;
+}
+
+
+.card .card-description .author {
+    display: flex;
+    margin-top: 50px;
+}
+
+.card .card-description .author img {
+    border-radius: 50%;
+    margin-right: 15px;
+    background: var(--background);
+}
+
+.card .card-description .author .name {
+    font-weight: bold;
+    min-height: 1rem;
+    min-width: 100px;
+    background: var(--background);
+}
+
+.card .card-description .author .date {
+    color: grey;
+    min-height: 1rem;
+    min-width: 100px;
+    background: var(--background);
+}
