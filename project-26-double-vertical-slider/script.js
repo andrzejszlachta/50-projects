@@ -74,7 +74,6 @@ function generateSlide(index, posClass = "", position = "append") {
     } else if (position === "prepend") {
         document.querySelector('.wrapper').prepend(slide)
     }
-
 }
 
 function handleClick(e) {
@@ -103,6 +102,4 @@ document.getElementById('next').addEventListener('click', handleClick)
 
 
 // TO DO
-// add slides in right order
 // text and image diffrent directions
-// 
