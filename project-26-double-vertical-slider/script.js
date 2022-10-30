@@ -99,7 +99,3 @@ renderPage()
 
 document.getElementById('prev').addEventListener('click', handleClick)
 document.getElementById('next').addEventListener('click', handleClick)
-
-
-// TO DO
-// text and image diffrent directions

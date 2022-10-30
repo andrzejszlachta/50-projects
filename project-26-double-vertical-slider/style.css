@@ -62,6 +62,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    transition: top .5s ease-in-out;
 }
 
 .wrapper .text h2 {
@@ -75,6 +78,8 @@ body {
     background-size: cover;
     width: 70%;
     height: 100%;
+    position: absolute;
+    left: 30%;
 }
 
 .slide.prevSlide {
@@ -87,4 +92,12 @@ body {
 
 .slide.nextSlide {
     top: -100%;
+}
+
+.slide.prevSlide .text {
+    top: -100%;
+}
+
+.slide.nextSlide .text {
+    top: 200%;
 }
