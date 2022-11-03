@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: rgb(107, 35, 175);
+    --secondaryColor: rgb(36, 36, 94);
+    --width: 700px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondaryColor);
+}
+
+.wrapper input {
+    background-color: var(--primaryColor);
+    color: #fff;
+    font-weight: bold;
+    min-width: var(--width);
+    height: 50px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.wrapper .user {
+    background-color: var(--primaryColor);
+    display: flex;
+    border-radius: 10px;
+    width: var(--width);
+}
+
+.wrapper .user .photo {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-image: url('https://images.pexels.com/photos/2323094/pexels-photo-2323094.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=loadhttps://images.pexels.com/photos/2323094/pexels-photo-2323094.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 3px 7px var(--secondaryColor);
+    margin: 40px 20px 20px 40px;
+}
+
+.wrapper .user .userinfo {
+    color: white;
+    padding: 30px;
+}
+
+.wrapper .user .userinfo .stats {
+    display: flex;
+    flex-basis: 100%;
+}
+
+.wrapper .user .userinfo .stats p {
+    margin-right: 30px;
+}
+
+.wrapper .user .userinfo .stats p span {
+    font-size: 1.2rem;
+}
+
+.wrapper .user .userinfo .projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper .user .userinfo .projects .project {
+    background-color: var(--secondaryColor);
+    padding: 5px;
+    font-size: 0.8rem;
+    margin: 10px 10px 0 0;
+    text-decoration: none;
+}
+
+.user.error {
+    text-align: center;
+    color: red;
+}
+
+@media (max-width: 750px) {
+    :root {
+        --width: 90vw;
+    }
+
+    .wrapper .user {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .wrapper .user .photo {
+        margin: 40px auto 0;
+    }
+}
