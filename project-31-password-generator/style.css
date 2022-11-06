@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: rgb(47, 33, 139);
+    --secondaryColor: rgb(36, 29, 80);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: var(--primaryColor);
+}
+
+.wrapper {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--secondaryColor);
+    box-shadow: 0 0 5px 7px rgb(51, 38, 131);
+}
+
+.wrapper h2 {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.wrapper .password-container {
+position: relative;
+margin-bottom: 10px;
+}
+
+.wrapper .password-container .password {
+    width: 100%;
+    background-color: rgb(29, 24, 63);
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 10px;
+}
+
+.wrapper .password-container button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(calc(-100% - 4px), -50%);
+    width: 24px;
+    height: 24px;
+    background-color: var(--primaryColor);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.wrapper .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0
+}
+input#length {
+    width: 40px;
+    text-align: center;
+}
+
+.wrapper>button {
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    transition: background-color .2s ease-in-out;
+}
+
+button:active, #copy:active {
+    background-color: rgb(29, 24, 63);
+}
