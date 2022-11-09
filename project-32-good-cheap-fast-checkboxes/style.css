@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    cursor: pointer;
+    position: relative;
+    background-color: #ccc;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.slider-container.active {
+    background-color:darkmagenta;
+    justify-content: flex-end;
+}
+
+.slider-container .slider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%) scale(1);
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: left .5s;
+}
+
+.slider-container.active .slider {
+    left: 50px;
+}
+
+.fireAnimation {
+    animation: toggle .25s;
+}
+
+.slider-container p {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 20px);
+}
+
+@keyframes toggle {
+    0% {
+        transform: translate(0, -50%) scale(1);
+    }
+    50% {
+        transform: translate(0, -50%) scale(1.2);
+    }
+    100% {
+        transform: translate(0, -50%) scale(1);
+    }
+}
