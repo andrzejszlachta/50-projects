@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --backgroundColor: rgb(110, 228, 228);
+    --primaryColor: rgb(127, 218, 127);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--backgroundColor);
+}
+
+#new-note {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primaryColor);
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.note-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 300px;
+    text-align: right;
+}
+
+.note-container .bar {
+    background-color: var(--primaryColor);
+}
+
+.note-container .bar button {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    font-size: 1.5rem;
+    line-height: 100%;
+    vertical-align: -13px;
+    margin: 0 3px 5px 0;
+}
+
+.note-container .bar button:hover {
+    color: black;
+}
+
+.note-container #note {
+    width: 100%;
+    padding: 10px;
+}
+
+.note-container #note:focus-visible {
+    outline: none;
+}
+
+.note-container .saved-note {
+    min-height: 200px;
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+}
