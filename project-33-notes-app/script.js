@@ -1,34 +1,51 @@
 const addBtn = document.getElementById('new-note');
-const saveBtn = document.getElementById('edit');
-const removeBtn = document.getElementById('delete');
+const notes = document.querySelector('.notes');
 
-const noteContainer = document.querySelector('.note-container');
-
-
-const wrapper = document.querySelector('.wrapper');
-
-let noteText = '';
-let isEditable = false;
-
-function showNoteWindow() {
-    noteContainer.style.display = 'block'
-    isEditable = true;
-    note.focus()
+function addNewNote() {
+    const newNote = document.createElement('div')
+    newNote.classList.add('note-container')
+    newNote.innerHTML = `
+    <div class="bar">
+        <button class="edit">🖆</button>
+        <button class="delete">🗑</button>
+    </div>
+    <div class="wrapper">
+        <textarea name="note" class="note" cols="30" rows="10"></textarea>
+    </div>
+    `
+    notes.appendChild(newNote)
+    newNote.querySelector('.edit').addEventListener('click', saveNote)
+    newNote.querySelector('.delete').addEventListener('click', deleteNote)
 }
-function saveNote() {
+function saveNote(e) {
+    const note = e.target.parentNode.parentNode
+    const wrapper = note.querySelector('.wrapper')
+    
+    let noteText
+    let isEditable
+    
+    (function() {
+        if (note.querySelector('textarea')) {
+            isEditable = true
+        } else {
+            isEditable = false
+        }
+    }())
+    
     if (isEditable) {
-        const note = document.getElementById('note');
-        noteText = note.value;
+        const noteInput = note.querySelector('.note')
+        noteText = noteInput.value;
         wrapper.innerHTML = `<div class="saved-note">${noteText}</div>`
-        isEditable = false;
     } else {
         noteText = document.querySelector('.saved-note').textContent
-        wrapper.innerHTML = `<textarea name="note" id="note" cols="30" rows="10"></textarea>`;
-        const note = document.getElementById('note');
-        note.value = noteText;
-        isEditable = true;
+        wrapper.innerHTML = `<textarea name="note" class="note" cols="30" rows="10"></textarea>`;
+        const noteInput = note.querySelector('.note')
+        noteInput.value = noteText;
     }
 }
 
-addBtn.addEventListener('click', showNoteWindow);
-saveBtn.addEventListener('click', saveNote)
+function deleteNote(e) {
+    e.target.parentNode.parentNode.remove()
+}
+
+addBtn.addEventListener('click', addNewNote);

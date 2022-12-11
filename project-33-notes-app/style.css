@@ -32,10 +32,13 @@ button {
     cursor: pointer;
 }
 
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .note-container {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+    margin: 20px;
     width: 300px;
     text-align: right;
 }
@@ -58,7 +61,7 @@ button {
     color: black;
 }
 
-.note-container #note {
+.note-container .note {
     width: 100%;
     padding: 10px;
 }
