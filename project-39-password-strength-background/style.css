@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 7px 0 grey;
+}
+
+.image {
+    position: absolute;
+    z-index: -1;
+    background-image: url(https://cdn.pixabay.com/photo/2017/11/02/10/23/security-2910624_960_720.jpg);
+    background-position:top;
+    background-size: cover;
+    filter: blur(20px);
+    width: 110%;
+    height: 110%;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.form-container form h2 {
+    margin: 30px 0 0;
+}
+
+.form-container form small {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container form input {
+    margin-bottom: 20px;
+}
+
+.form-container form button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
