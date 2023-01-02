@@ -37,7 +37,6 @@ function addResults(res) {
     const searchValue = searchInput.value
     const container = document.querySelector('.results')
     const data = res.filter(isSearchedResult)
-    console.log(data)
     container.innerHTML = ''
     if (data.length === 0) {
         const noRes = document.createElement('div')
