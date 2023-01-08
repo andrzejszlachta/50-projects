@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    --navWidth: 450px;
+}
 
 * {
     box-sizing: border-box;
@@ -11,8 +14,100 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     margin: 0;
     padding: 0;
+}
+
+p.brand {
+    color: red;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+    padding: 40px;
+}
+
+.placeholder .brand {
+    padding: 0;
+}
+
+nav#main {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--navWidth);
+    transform: translateX(-100%);
+}
+
+nav#main .switch {
+    font-size: 1.2rem;
+    color: grey;
+    cursor: pointer;
+}
+
+nav#main .switch.bars {
+    position: fixed;
+    top: 10px;
+    left: calc(var(--navWidth) + 10px);
+    z-index: -3;
+}
+
+nav#main.active .switch.bars {
+    display: none;
+}
+
+nav#main .switch.xmark {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+nav#main .switch:hover {
+    color: black;
+}
+
+nav#main .layer {
+    position: absolute;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform .2s ease-out;
+}
+
+nav#main .black {
+    position: absolute;
+    z-index: -2;
+    background-color: black;
+    width: 100%;
+}
+
+nav#main .red {
+    position: absolute;
+    z-index: -1;
+    background-color: red;
+    width: 95%;
+}
+
+nav#main .white {
+    position: relative;
+    background-color: white;
+    width: 90%;
+}
+
+nav#main .layer.active {
+    transform: translateX(var(--navWidth));
+}
+
+nav#main ul {
+    margin: 0;
+    list-style: none;
+}
+
+nav#main ul li {
+    margin: 20px 0;
+}
+
+nav#main ul li:hover {
+    cursor: pointer;
 }
