@@ -9,9 +9,81 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+    justify-content: flex-start;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: #eee;
+}
+
+#title {
+    font-size: 10rem;
+    opacity: 0.3;
+    color:blueviolet;
+    margin: 5%;
+}
+.app-container {
+    box-shadow: 0 0 7px 2px #ddd;
+}
+
+ul.todos-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#newEntry,
+ul.todos-list li {
+    border: none;
+    width: 300px;
+    font-size: 1.5rem;
+    line-height: 140%;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+#newEntry {
+    font-size: 1.8rem;
+    padding: 10px 15px;
+    margin-bottom: 1px;
+}
+
+#newEntry::placeholder {
+    opacity: 0.5;
+}
+
+#newEntry:focus-visible {
+    outline: 2px groove blueviolet;
+}
+
+ul.todos-list li {
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    padding: 15px;
+    cursor: pointer;
+    margin: 1px;
+}
+
+ul.todos-list li:nth-of-type(1) {
+    border-top: 1px solid #ddd;
+}
+
+ul.todos-list li:hover {
+    box-shadow: 0 0 1px 1px #000;
+}
+
+ul.todos-list li.completed {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.instrutions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.instrutions p {
+    opacity: 0.5;
+    color: grey;
+    margin: 3px;
 }
